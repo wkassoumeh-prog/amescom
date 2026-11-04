@@ -21,9 +21,10 @@ export function ArchiveExperience() {
           <div className={styles.actions}><Link className={styles.primary} href={contact}>اتصل بنا <span aria-hidden="true">←</span></Link><a className={styles.textLink} href="#archive-demo">شاهد كيف تعمل الفكرة <span aria-hidden="true">↓</span></a></div>
           <div className={styles.heroTags}><span>يقرأ العربية</span><span>ينظّم الوثائق</span><span>يحفظ تاريخها</span></div>
         </div>
-        <div className={styles.heroArt} aria-label="تصوّر لصفحة تجد مكانها بين ملفات منظّمة">
-          <div className={styles.paperBack} aria-hidden="true"><span>المعرفة تبدأ بوثيقة.</span><i /><i /><i /><b>ARCHIVE</b></div>
-          <div className={styles.heroPhoto}><Image src="/media/archive-every-page.jpg" width={1152} height={864} alt="صفحة تنزلق إلى المجلد الصحيح بين ملفات منظّمة، كل وثيقة في مكانها" priority sizes="(max-width: 700px) 75vw, 370px" /><div className={styles.photoLabel}><span className={styles.liveDot} /> كل صفحة في مكانها</div></div>
+        <div className={styles.heroArt} aria-label="ثلاث وثائق في مكانها: سياسة المشتريات، محضر الاجتماع، وعقد توريد">
+          <div className={styles.sheet} data-sheet="back" aria-hidden="true"><span>سياسة المشتريات</span><i /><i /><i /><b>DOC</b></div>
+          <div className={styles.sheet} data-sheet="mid" aria-hidden="true"><span>محضر الاجتماع</span><i /><i /><i /><b>PDF</b></div>
+          <div className={styles.sheet} data-sheet="front" aria-hidden="true"><span>عقد توريد</span><i /><i /><i /><em className={styles.stamp}>مؤرشف</em></div>
           <div className={styles.floatingDocument} data-place="back" aria-hidden="true"><span className={styles.fileIcon} data-kind="DOC">DOC</span><div><b>سياسة المشتريات.doc</b><small>مصنّفة. قابلة للبحث. في مكانها.</small></div><span className={styles.check}>✓</span></div>
           <div className={styles.floatingDocument} data-place="mid" aria-hidden="true"><span className={styles.fileIcon}>PDF</span><div><b>محضر الاجتماع.pdf</b><small>مصنّف. قابل للبحث. في مكانه.</small></div><span className={styles.check}>✓</span></div>
           <div className={styles.floatingDocument} data-place="front" aria-hidden="true"><span className={styles.fileIcon}>PDF</span><div><b>عقد توريد.pdf</b><small>مصنّف. قابل للبحث. في مكانه.</small></div><span className={styles.check}>✓</span></div>
