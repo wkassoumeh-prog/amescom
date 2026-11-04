@@ -1,0 +1,119 @@
+.lead {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  max-width: 38rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.5rem;
+}
+
+.overviewList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--color-line);
+}
+
+.overviewItem {
+  padding-block: 2rem;
+  border-block-end: 1px solid var(--color-line);
+}
+
+.overviewItem h2 {
+  margin-block-end: 0.35rem;
+}
+
+.overviewItem h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.overviewItem h2 a:hover {
+  color: var(--color-accent);
+}
+
+.productNames {
+  margin: 0.75rem 0 0;
+  color: var(--color-muted);
+}
+
+.taskList,
+.productList,
+.caveatList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.taskList {
+  border-block-start: 1px solid var(--color-line);
+}
+
+.task {
+  padding-block: 1.5rem;
+  border-block-end: 1px solid var(--color-line);
+  max-width: var(--measure);
+}
+
+.task p {
+  margin: 0;
+}
+
+.kind {
+  display: inline-block;
+  margin-block-end: 0.4rem;
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.productList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.productList a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.productList a:hover .name {
+  color: var(--color-accent);
+}
+
+.name {
+  display: block;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-block-end: 0.35rem;
+}
+
+.caveatList {
+  max-width: var(--measure);
+}
+
+.caveatList li {
+  padding-block: 0.5rem;
+  padding-inline-start: 1rem;
+  border-inline-start: 0.2rem solid var(--color-line);
+  color: var(--color-muted);
+  margin-block-end: 0.75rem;
+}
+
+.leadProduct .name {
+  color: var(--color-accent);
+}
+
+@media (min-width: 48rem) {
+  .productList {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leadProduct {
+    grid-column: 1 / -1;
+  }
+}

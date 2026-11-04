@@ -1,0 +1,52 @@
+.figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.frame {
+  position: relative;
+  overflow: clip;
+  border-radius: var(--radius-frame);
+  background: var(--color-surface);
+  isolation: isolate;
+}
+
+.frame img {
+  object-fit: cover;
+}
+
+.zoom {
+  transition: box-shadow 0.45s var(--ease-out);
+}
+
+.zoom img {
+  transition: transform 0.7s var(--ease-out);
+}
+
+:global(a:hover) .zoom,
+:global(a:focus-visible) .zoom {
+  box-shadow: 0 1.5rem 3rem rgba(23, 25, 28, 0.14);
+}
+
+:global(a:hover) .zoom img,
+:global(a:focus-visible) .zoom img {
+  transform: scale(1.04);
+}
+
+.caption {
+  margin-block-start: 0.65rem;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoom,
+  .zoom img {
+    transition: none;
+  }
+
+  :global(a:hover) .zoom img,
+  :global(a:focus-visible) .zoom img {
+    transform: none;
+  }
+}

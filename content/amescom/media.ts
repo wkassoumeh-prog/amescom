@@ -1,0 +1,187 @@
+import type { MediaItem } from "./types";
+
+/**
+ * Private media inventory. Reference PDFs are not public downloads.
+ * Do not copy S5 branding, QR codes, or PDF crops into the site.
+ */
+export const media: MediaItem[] = [
+  {
+    id: "M01",
+    kind: "logo",
+    source: { source: "S2", locator: "p1 footer wordmark; also S3/S4" },
+    description: "AMeSCom wordmark as printed on brochure pages.",
+    altAr: "شعار أميسكوم",
+    usageRights: "pending-original",
+    sensitiveDataCheck: "not-applicable",
+    publication: "held",
+    notes:
+      "Not an original SVG. Do not crop from PDF. Stage 2 uses a temporary Amescom text wordmark until Q06 supplies originals.",
+  },
+  {
+    id: "M02",
+    kind: "illustration",
+    source: { source: "S2", locator: "p1 cover" },
+    description:
+      "ARCHIVE cover: conceptual data-centre scene with holographic documents, scanner and generic dashboards.",
+    altAr: "رسم توضيحي لمفهوم الأرشفة الإلكترونية، وليس لقطة من واجهة النظام",
+    usageRights: "unknown",
+    sensitiveDataCheck: "unverified",
+    publication: "held",
+    notes: "Illustration, not real UI. Cover shows a document with a portrait — treat as sensitive until sanitized.",
+  },
+  {
+    id: "M03",
+    kind: "illustration",
+    source: { source: "S2", locator: "p3 left column" },
+    description: "ARCHIVE governance page: tablet/server illustration with lock and document holograms.",
+    altAr: "رسم توضيحي عن حماية الوثائق، وليس واجهة البرنامج",
+    usageRights: "unknown",
+    sensitiveDataCheck: "unverified",
+    publication: "held",
+    notes: "Illustration. Do not present as software UI.",
+  },
+  {
+    id: "M04",
+    kind: "illustration",
+    source: { source: "S3", locator: "p1 cover" },
+    description:
+      "Clinical PRO cover: clinic scene with tablet, stethoscope and floating medical UI panels.",
+    altAr: "رسم توضيحي لعيادة ومنصة إدارة طبية، وليس لقطة من Clinical PRO",
+    usageRights: "unknown",
+    sensitiveDataCheck: "not-applicable",
+    publication: "held",
+    notes: "Conceptual medical imagery. Floating UI is generic illustration.",
+  },
+  {
+    id: "M05",
+    kind: "illustration",
+    source: { source: "S3", locator: "p2 lower half" },
+    description:
+      "Clinical PRO module diagram with English labels (Patient Registration, legacy lab system, paper record-keeping) and a generic tablet dashboard.",
+    altAr: "رسم يوضّح توحيد أنظمة المركز الطبي في منصة واحدة",
+    usageRights: "unknown",
+    sensitiveDataCheck: "not-applicable",
+    publication: "held",
+    notes: "Stock-style illustration with English UI chrome. Not Amescom software. Do not publish as a product screenshot.",
+  },
+  {
+    id: "M06",
+    kind: "illustration",
+    source: { source: "S3", locator: "p3" },
+    description: "Clinical staff with tablet and floating medical icons over a clinic photograph.",
+    altAr: "رسم توضيحي لعمل الفرق الطبية على منصة رقمية",
+    usageRights: "unknown",
+    sensitiveDataCheck: "unverified",
+    publication: "held",
+    notes: "Photographic background may need a licence. Not a real Clinical PRO screen.",
+  },
+  {
+    id: "M07",
+    kind: "likely-real-ui",
+    source: { source: "S4", locator: "p2 upper screenshot" },
+    description:
+      "Workflow designer canvas: green Amescom header, Arabic node labels, drag-and-drop approval graph.",
+    altAr: "واجهة تصميم مسار اعتماد في AMESCOM Workflow",
+    usageRights: "unknown",
+    sensitiveDataCheck: "synthetic-required",
+    publication: "held",
+    notes:
+      "Appears to be real product UI. Replace with an original high-resolution export using synthetic data before publication (Q23). Do not crop this PDF.",
+  },
+  {
+    id: "M08",
+    kind: "likely-real-ui",
+    source: { source: "S4", locator: "p2 lower screenshot" },
+    description: "Workflow organisation / role tree with Arabic department labels and Amescom header.",
+    altAr: "مخطط الهيكل التنظيمي في AMESCOM Workflow",
+    usageRights: "unknown",
+    sensitiveDataCheck: "synthetic-required",
+    publication: "held",
+    notes: "Same conditions as M07. Labels may reflect a real organisation structure.",
+  },
+  {
+    id: "M09",
+    kind: "brochure",
+    source: { source: "S2", locator: "full PDF" },
+    description: "AMESCOM ARCHIVE brochure PDF.",
+    altAr: "كتيّب AMESCOM ARCHIVE",
+    usageRights: "unknown",
+    sensitiveDataCheck: "not-applicable",
+    publication: "held",
+    notes: "Not a public download until Q25. Do not auto-publish reference PDFs.",
+  },
+  {
+    id: "M10",
+    kind: "brochure",
+    source: { source: "S3", locator: "full PDF" },
+    description: "AMESCOM Clinical PRO brochure PDF.",
+    altAr: "كتيّب AMESCOM Clinical PRO",
+    usageRights: "unknown",
+    sensitiveDataCheck: "not-applicable",
+    publication: "held",
+    notes: "Not a public download until Q25.",
+  },
+  {
+    id: "M11",
+    kind: "brochure",
+    source: { source: "S4", locator: "full PDF" },
+    description: "AMESCOM Workflow brochure PDF (source filename misspelt Wrokflow).",
+    altAr: "كتيّب AMESCOM Workflow",
+    usageRights: "unknown",
+    sensitiveDataCheck: "synthetic-required",
+    publication: "held",
+    notes: "Contains likely-real UI. Not a public download until Q25.",
+  },
+  {
+    id: "M12",
+    kind: "source-branding",
+    source: { source: "S5", locator: "all pages header/footer" },
+    description:
+      "Non-Amescom logo, email, website and phone on the FRONA specification. Capability text is evidence only.",
+    altAr: "",
+    usageRights: "do-not-publish",
+    sensitiveDataCheck: "not-applicable",
+    publication: "held",
+    notes:
+      "A-01/A-05: never reproduce this branding, contact block, or filename in copy, metadata, media or downloads. FRONA the product name may be used under Amescom (A-06).",
+  },
+  {
+    id: "M13",
+    kind: "diagram",
+    source: { source: "blueprint", locator: "product template fallback" },
+    description: "Placeholder for original Amescom diagrams (document lifecycle, clinical modules, risk cycle).",
+    altAr: "مخطط توضيحي لآلية العمل",
+    usageRights: "pending-original",
+    sensitiveDataCheck: "not-applicable",
+    publication: "draft",
+    notes: "Create original diagrams in later stages if screenshots remain unapproved.",
+  },
+  {
+    id: "M14",
+    kind: "photo",
+    source: { source: "original", locator: "public/media/*.jpg" },
+    description:
+      "Original photographic illustrations generated for the public site (hero, products, sectors, about). Not Amescom premises, staff, or product UI.",
+    altAr: "صور توضيحية أُعدّت للموقع وليست لمقر أميسكوم",
+    usageRights: "approved",
+    sensitiveDataCheck: "not-applicable",
+    publication: "draft",
+    notes: "Keep captions that they are illustrative. Do not present as client work or real UI.",
+  },
+  {
+    id: "M15",
+    kind: "diagram",
+    source: { source: "original", locator: "public/diagrams/amescom.drawio" },
+    description:
+      "Original draw.io process diagrams (document path, archive cycle, workflow routing, clinical modules, engagement) with SVG exports for the site.",
+    altAr: "مخططات توضيحية لمسارات العمل",
+    usageRights: "approved",
+    sensitiveDataCheck: "not-applicable",
+    publication: "draft",
+    notes: "Editable source is the .drawio file. On-page SVGs are labelled as illustrations.",
+  },
+];
+
+export const mediaById = Object.fromEntries(
+  media.map((item) => [item.id, item]),
+) as Record<string, MediaItem>;

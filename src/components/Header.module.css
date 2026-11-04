@@ -1,0 +1,161 @@
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 20;
+  background: var(--color-bg);
+  border-block-end: 1px solid var(--color-line);
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  min-height: var(--header-height);
+}
+
+.brand {
+  text-decoration: none;
+  color: inherit;
+  margin-inline-end: auto;
+  min-width: 0;
+}
+
+.desktop {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navLink,
+.navButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: 0.75rem;
+  color: var(--color-text);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.navLink:hover,
+.navButton:hover {
+  color: var(--color-accent);
+}
+
+.caret {
+  display: inline-flex;
+  margin-inline-start: 0.35rem;
+}
+
+.disclosure {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: calc(100% - 0.15rem);
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  min-width: 16rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-control);
+}
+
+.menu a {
+  display: block;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.7rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: 0.35rem;
+}
+
+.menu a:hover {
+  background: var(--color-surface);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta {
+  display: none;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-control);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+.menuButton svg {
+  display: block;
+  margin-inline: auto;
+}
+
+.mobile {
+  display: block;
+  padding-block: 0.75rem 1.5rem;
+  border-block-start: 1px solid var(--color-line);
+  background: var(--color-bg);
+  overscroll-behavior: contain;
+}
+
+.mobileGroup {
+  margin-block-end: 1rem;
+}
+
+.mobileParent {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.mobileList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileList a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  padding-inline-start: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .desktop {
+    display: flex;
+  }
+
+  .cta {
+    display: inline-flex;
+  }
+
+  .menuButton,
+  .mobile {
+    display: none;
+  }
+}

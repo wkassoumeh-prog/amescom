@@ -1,0 +1,183 @@
+import type { MediaItem } from './types.ts';
+
+/**
+ * Media inventory. Nothing from the reference PDFs is published automatically;
+ * reference files stay in the private `references/amescom/` folder.
+ */
+export const media: MediaItem[] = [
+  // Brand
+  {
+    id: 'amescom-logo',
+    source: 'owner-supplied',
+    location: 'Requested (Q06)',
+    description: 'Original Amescom logo (SVG or high-resolution transparent).',
+    classification: 'logo',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-applicable',
+    status: 'requested',
+    alt: { ar: 'أميسكوم' },
+    notes: 'Brochures show a stylized "AMeSCom" mark; do not crop it from PDFs. Text wordmark until supplied.',
+  },
+
+  // S2 — AMESCOM ARCHIVE
+  {
+    id: 's2-p1-cover',
+    source: 'S2',
+    location: 'p1',
+    description: 'Cover: data-center scene with scanner, floating documents and generic UI panels.',
+    classification: 'illustration',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'excluded',
+    alt: null,
+    notes: 'Conceptual imagery, not product UI. Low resolution once extracted.',
+  },
+  {
+    id: 's2-qr',
+    source: 'S2',
+    location: 'p1',
+    description: 'QR code next to contact details; destination unknown.',
+    classification: 'qr-code',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-applicable',
+    status: 'excluded',
+    alt: null,
+  },
+  {
+    id: 's2-p3-p5-imagery',
+    source: 'S2',
+    location: 'pp3–5',
+    description: 'Tablet with generic dashboards, AI/document graphics, filing drawer with floating documents.',
+    classification: 'illustration',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'excluded',
+    alt: null,
+    notes: 'Must not be presented as ARCHIVE screenshots.',
+  },
+
+  // S3 — AMESCOM Clinical PRO
+  {
+    id: 's3-p1-cover',
+    source: 'S3',
+    location: 'p1',
+    description: 'Cover: clinic interior with floating medical UI panels and tablet.',
+    classification: 'illustration',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'excluded',
+    alt: null,
+  },
+  {
+    id: 's3-qr',
+    source: 'S3',
+    location: 'p1',
+    description: 'QR code next to contact details; destination unknown.',
+    classification: 'qr-code',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-applicable',
+    status: 'excluded',
+    alt: null,
+  },
+  {
+    id: 's3-p2-modules',
+    source: 'S3',
+    location: 'p2',
+    description: 'Tablet "Medical Management" mock with English module labels and "legacy lab system / paper record-keeping" cards.',
+    classification: 'illustration',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'excluded',
+    alt: null,
+  },
+  {
+    id: 's3-p5-dashboard',
+    source: 'S3',
+    location: 'p5',
+    description: 'Monitor dashboard mock with financial KPIs, "Payer Mix", "Medicare", "Recent Claims".',
+    classification: 'illustration',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'excluded',
+    alt: null,
+    notes: 'Implies insurance billing/claims capabilities not established for Clinical PRO. Never publish.',
+  },
+
+  // S4 — AMESCOM Workflow
+  {
+    id: 's4-p2-designer',
+    source: 'S4',
+    location: 'p2 (upper)',
+    description: 'Arabic workflow designer canvas with connected approval nodes and branching.',
+    classification: 'real-ui-probable',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'requested',
+    alt: { ar: 'واجهة تصميم مسار موافقة في AMESCOM Workflow تُظهر خطوات مترابطة وشروط تفرّع' },
+    notes: 'Request an original high-resolution export with synthetic data; PDF copy is too small.',
+  },
+  {
+    id: 's4-p2-route-map',
+    source: 'S4',
+    location: 'p2 (lower)',
+    description: 'Arabic UI showing a hierarchical route/organization map.',
+    classification: 'real-ui-probable',
+    usageRights: 'unknown',
+    sensitiveDataCheck: 'not-checked',
+    status: 'requested',
+    alt: { ar: 'واجهة في AMESCOM Workflow تعرض مخططاً هرمياً لخطوات المسار' },
+    notes: 'Confirm what the screen shows before final alt text.',
+  },
+
+  // S5 — FRONA specification
+  {
+    id: 's5-branding',
+    source: 'S5',
+    location: 'pp1–7 header and footer',
+    description: 'Non-Amescom company logo, email domain and website on every page.',
+    classification: 'non-amescom-branding',
+    usageRights: 'not-permitted',
+    sensitiveDataCheck: 'not-applicable',
+    status: 'excluded',
+    alt: null,
+    notes: 'Decision A-01. S5 contains no product imagery.',
+  },
+
+  // Original explanatory diagrams (Stage 4)
+  {
+    id: 'diagram-archive-lifecycle',
+    source: 'original',
+    location: 'To create',
+    description: 'Neutral document lifecycle: capture → OCR → classify → search → permissions/audit.',
+    classification: 'diagram-to-create',
+    usageRights: 'confirmed',
+    sensitiveDataCheck: 'synthetic',
+    status: 'to-create',
+    alt: { ar: 'رسم توضيحي لدورة حياة الوثيقة: الإدخال، التعرّف الضوئي، التصنيف، البحث، الصلاحيات وسجل العمليات' },
+  },
+  {
+    id: 'diagram-clinical-departments',
+    source: 'original',
+    location: 'To create',
+    description: 'Reception, clinics, lab and imaging connected around one patient file.',
+    classification: 'diagram-to-create',
+    usageRights: 'confirmed',
+    sensitiveDataCheck: 'synthetic',
+    status: 'to-create',
+    alt: { ar: 'رسم توضيحي يربط الاستقبال والعيادات والمخبر والأشعة بملف مريض موحّد' },
+  },
+  {
+    id: 'diagram-frona-risk-cycle',
+    source: 'original',
+    location: 'To create',
+    description: 'Risk profile → controls → self-assessment → KRIs/events → reports.',
+    classification: 'diagram-to-create',
+    usageRights: 'confirmed',
+    sensitiveDataCheck: 'synthetic',
+    status: 'to-create',
+    alt: { ar: 'رسم توضيحي لدورة إدارة المخاطر: ملف المخاطر، الضوابط، التقييم الذاتي، المؤشرات والأحداث، التقارير' },
+    notes: 'Held with FRONA.',
+  },
+];
+
+export const mediaById = new Map(media.map((item) => [item.id, item]));

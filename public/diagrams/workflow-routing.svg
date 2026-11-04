@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" direction="rtl">
+  <title>E3'1 'DE1',9) H'D'9*E'/ E9 *A1Q9</title>
+  <rect width="800" height="420" rx="14" fill="#F7F8FA"/>
+  <path d="M560 176h52M456 176c-18-40-36-52-64-52M456 176c-18 40-36 52-64 52M340 124h48M340 228h48" fill="none" stroke="#145DA0" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="560,170 544,176 560,182" fill="#145DA0"/>
+  <polygon points="340,118 324,124 340,130" fill="#145DA0"/>
+  <polygon points="340,222 324,228 340,234" fill="#145DA0"/>
+  <rect x="620" y="120" width="128" height="112" rx="12" fill="#fff" stroke="#E3E7EB"/>
+  <circle cx="656" cy="176" r="12" fill="#EDF4FC" stroke="#145DA0"/>
+  <rect x="678" y="168" width="50" height="10" rx="5" fill="#E3E7EB"/>
+  <text x="684" y="268" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">7D(</text>
+  <rect x="456" y="120" width="96" height="112" rx="12" fill="#fff" stroke="#145DA0"/>
+  <rect x="476" y="164" width="56" height="10" rx="5" fill="#145DA0"/>
+  <rect x="476" y="184" width="40" height="8" rx="4" fill="#E3E7EB"/>
+  <text x="504" y="268" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">E1',9)</text>
+  <rect x="164" y="72" width="168" height="88" rx="12" fill="#fff" stroke="#E3E7EB"/>
+  <circle cx="196" cy="116" r="11" fill="#145DA0"/>
+  <rect x="218" y="108" width="88" height="10" rx="5" fill="#EDF4FC"/>
+  <text x="248" y="192" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">'9*E'/</text>
+  <rect x="164" y="232" width="168" height="88" rx="12" fill="#fff" stroke="#E3E7EB"/>
+  <circle cx="196" cy="276" r="11" fill="#EDF4FC" stroke="#145DA0"/>
+  <rect x="218" y="268" width="72" height="10" rx="5" fill="#E3E7EB"/>
+  <text x="248" y="352" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">%9'/)</text>
+</svg>

@@ -1,0 +1,161 @@
+.hero {
+  display: grid;
+  gap: 2.25rem;
+  padding-block-start: 2rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  max-width: 38rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
+}
+
+.heroVisual,
+.followMedia {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.followMedia {
+  margin-block-start: 2.5rem;
+}
+
+.stack {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2.75rem;
+}
+
+.productCard,
+.sectorCard,
+.serviceRow {
+  color: inherit;
+  text-decoration: none;
+}
+
+.productCard {
+  display: grid;
+  gap: 1rem;
+}
+
+.name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem);
+  margin-block-end: 0.35rem;
+}
+
+.summary {
+  margin: 0;
+  color: var(--color-muted);
+  max-width: 40rem;
+}
+
+.sectorGrid {
+  display: grid;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sectorCard {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.sectorCard h3 {
+  margin: 0;
+}
+
+.strengths {
+  display: grid;
+  gap: 2rem 2.75rem;
+}
+
+.serviceList {
+  display: grid;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-block-start: 1px solid var(--color-line);
+}
+
+.serviceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-block: 1.6rem;
+  border-block-end: 1px solid var(--color-line);
+}
+
+.serviceRow h3 {
+  margin-block-end: 0.35rem;
+}
+
+.serviceRow p {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.serviceRow:hover h3,
+.serviceRow:focus-visible h3,
+.productCard:hover .name,
+.productCard:focus-visible .name,
+.sectorCard:hover h2,
+.sectorCard:focus-visible h2,
+.sectorCard:hover h3,
+.sectorCard:focus-visible h3 {
+  color: var(--color-accent);
+}
+
+.serviceRow:hover :global(.arrow-icon),
+.serviceRow:focus-visible :global(.arrow-icon) {
+  transform: translateX(-0.35rem);
+}
+
+.engagement {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.closing {
+  text-align: start;
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: end;
+    padding-block-start: 3.5rem;
+    min-height: min(78vh, 46rem);
+  }
+
+  .sectorGrid,
+  .strengths {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .engagement {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceRow:hover :global(.arrow-icon),
+  .serviceRow:focus-visible :global(.arrow-icon) {
+    transform: none;
+  }
+}

@@ -1,0 +1,131 @@
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.hero > * {
+  min-width: 0;
+}
+
+.productName {
+  margin: 0 0 0.5rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.held {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-control);
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--color-muted);
+  max-width: 38rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.5rem;
+}
+
+.visual {
+  min-width: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.featureList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--color-line);
+}
+
+.feature {
+  padding-block: 1.5rem;
+  border-block-end: 1px solid var(--color-line);
+  max-width: var(--measure);
+}
+
+.feature p {
+  margin: 0;
+}
+
+.sectorList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.sectorList h3 {
+  margin-block-end: 0.35rem;
+}
+
+.sectorList h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sectorList h3 a:hover {
+  color: var(--color-accent);
+}
+
+.useCases {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.useCases li + li {
+  margin-block-start: 0.75rem;
+}
+
+.overviewList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--color-line);
+}
+
+.overviewItem {
+  padding-block: 2rem;
+  border-block-end: 1px solid var(--color-line);
+}
+
+.overviewItem h2 {
+  margin-block-end: 0.35rem;
+}
+
+.overviewItem h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.overviewItem h2 a:hover {
+  color: var(--color-accent);
+}
+
+.job {
+  font-size: 1.15rem;
+  margin-block-end: 0.5rem;
+  max-width: 42rem;
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+  }
+
+  .sectorList {
+    grid-template-columns: 1fr 1fr;
+  }
+}

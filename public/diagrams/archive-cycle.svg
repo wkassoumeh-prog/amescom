@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" direction="rtl">
+  <title>/H1) 'DH+JB) EF 'D'D*B'7 %DI 'D(-+</title>
+  <rect width="800" height="420" rx="14" fill="#F7F8FA"/>
+  <path d="M218 170h48M394 170h48M570 170h48" fill="none" stroke="#145DA0" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="218,164 202,170 218,176" fill="#145DA0"/>
+  <polygon points="394,164 378,170 394,176" fill="#145DA0"/>
+  <polygon points="570,164 554,170 570,176" fill="#145DA0"/>
+  <g>
+    <rect x="608" y="88" width="132" height="164" rx="10" fill="#fff" stroke="#E3E7EB"/>
+    <rect x="628" y="112" width="92" height="8" rx="4" fill="#145DA0"/>
+    <rect x="628" y="132" width="72" height="6" rx="3" fill="#E3E7EB"/>
+    <rect x="628" y="148" width="84" height="6" rx="3" fill="#E3E7EB"/>
+    <rect x="628" y="164" width="64" height="6" rx="3" fill="#E3E7EB"/>
+    <text x="674" y="290" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">'D*B'7</text>
+  </g>
+  <g>
+    <rect x="432" y="88" width="132" height="164" rx="10" fill="#fff" stroke="#E3E7EB"/>
+    <rect x="452" y="128" width="92" height="14" rx="4" fill="#EDF4FC" stroke="#145DA0"/>
+    <rect x="456" y="156" width="44" height="8" rx="3" fill="#145DA0"/>
+    <rect x="508" y="156" width="28" height="8" rx="3" fill="#E3E7EB"/>
+    <text x="498" y="290" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">*91QA</text>
+  </g>
+  <g>
+    <rect x="256" y="88" width="132" height="164" rx="10" fill="#fff" stroke="#E3E7EB"/>
+    <rect x="276" y="118" width="92" height="22" rx="6" fill="#EDF4FC"/>
+    <rect x="276" y="148" width="92" height="22" rx="6" fill="#fff" stroke="#E3E7EB"/>
+    <rect x="276" y="178" width="92" height="22" rx="6" fill="#fff" stroke="#E3E7EB"/>
+    <text x="322" y="290" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">*5FJA</text>
+  </g>
+  <g>
+    <rect x="80" y="88" width="132" height="164" rx="10" fill="#fff" stroke="#145DA0"/>
+    <circle cx="124" cy="156" r="18" fill="none" stroke="#145DA0" stroke-width="3"/>
+    <path d="M136 168l22 22" stroke="#145DA0" stroke-width="3" stroke-linecap="round"/>
+    <rect x="118" y="204" width="72" height="8" rx="4" fill="#E3E7EB"/>
+    <text x="146" y="290" text-anchor="middle" font-family="Segoe UI, Tahoma, sans-serif" font-size="17" font-weight="600" fill="#17191C">(-+</text>
+  </g>
+</svg>

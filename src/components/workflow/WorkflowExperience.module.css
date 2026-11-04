@@ -1,0 +1,154 @@
+.productName {
+  display: block;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-latin-stack);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #f4efe6;
+  text-shadow: 0 1px 14px rgba(10, 16, 22, 0.5);
+}
+
+.usesSection {
+  background: #f7f7f3;
+  padding-block: 72px 80px;
+}
+
+.usesLead {
+  max-width: 36rem;
+  margin: 0 0 36px;
+  color: #696963;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.uses {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+}
+
+.uses article {
+  padding-top: 24px;
+  border-top: 1px solid #e6e6e1;
+}
+
+.uses h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  line-height: 1.7;
+}
+
+.uses h3 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #191919 !important;
+}
+
+.uses h3 a:hover {
+  color: #0874d8 !important;
+}
+
+.uses h3 svg {
+  width: 18px;
+}
+
+.uses p {
+  margin: 0;
+  color: #696963;
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.ecosystem {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-block: 28px 40px;
+  border-top: 1px solid #e6e6e1;
+}
+
+.ecosystem > p {
+  flex-shrink: 0;
+  margin: 0;
+  color: #696963;
+  font-size: 12px;
+}
+
+.ecosystem > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  gap: 20px;
+}
+
+.ecosystem a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 44px;
+  color: #51514a !important;
+}
+
+.ecosystem a[aria-current="page"],
+.ecosystem a:hover {
+  color: #191919 !important;
+}
+
+.ecosystem b {
+  font: 600 1rem/1.3 var(--font-latin-stack);
+  letter-spacing: -0.03em;
+}
+
+.ecosystem span {
+  font-size: 12px;
+  color: #7a766e;
+}
+
+@media (max-width: 1000px) {
+  .uses {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .ecosystem {
+    gap: 24px;
+  }
+
+  .ecosystem > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .productName {
+    font-size: 0.95rem;
+  }
+
+  .usesSection {
+    padding-block: 48px;
+  }
+
+  .uses {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .uses article {
+    padding-top: 18px;
+  }
+
+  .ecosystem {
+    display: block;
+    padding-block: 22px 32px;
+  }
+
+  .ecosystem > p {
+    margin-bottom: 16px;
+  }
+
+  .ecosystem > div {
+    gap: 14px 22px;
+  }
+}

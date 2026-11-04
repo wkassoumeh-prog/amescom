@@ -1,0 +1,24 @@
+.figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 480 / 300;
+  border-radius: var(--radius-frame);
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 600;
+  fill: #17191c;
+  font-family: var(--font-sans);
+}
+
+.caption {
+  margin-block-start: 0.6rem;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}

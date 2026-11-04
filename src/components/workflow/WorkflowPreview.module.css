@@ -1,0 +1,632 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  min-height: min(70vh, 620px);
+  border-radius: 28px;
+  background: #f3f7fb;
+  color: #1c2833;
+}
+
+.copy {
+  position: absolute;
+  z-index: 5;
+  inset-inline-start: 22px;
+  inset-block-end: 22px;
+  width: min(340px, 40%);
+  padding: 1.35rem 1.4rem 1.15rem;
+  border-radius: 18px;
+  background: #121a22;
+  color: #f4f1ea;
+  box-shadow: 0 18px 40px rgba(10, 16, 22, 0.28);
+  animation: copyIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.copy h3 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display-face), var(--font-arabic), sans-serif;
+  font-size: clamp(1.45rem, 2.15vw, 1.95rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+.copy p {
+  margin: 0;
+  color: #d5cfc4;
+  font-size: 0.92rem;
+  line-height: 1.85;
+}
+
+@keyframes copyIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: min(70vh, 620px);
+  background: #f4f7fb;
+  color: #1c2833;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 46px;
+  padding: 0 14px 0 12px;
+  background: #0e7a46;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-latin-stack);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -0.04em;
+}
+
+.mark {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #fff;
+  border-radius: 4px;
+}
+
+.mark i {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 1.5px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.mark i:first-child {
+  top: 6px;
+}
+
+.mark i:last-child {
+  top: 10px;
+}
+
+.chromeNav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 12px;
+}
+
+.chromeNav span + span {
+  padding-inline-start: 16px;
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.chromeEnd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+}
+
+.chromeIcon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.chromeIcon svg,
+.create svg,
+.start svg,
+.docIcon svg,
+.nodeTools svg,
+.badge svg,
+.dock svg {
+  width: 15px;
+  height: 15px;
+}
+
+.create {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0e7a46;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.create svg {
+  width: 13px;
+  height: 13px;
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 18px;
+  height: 38px;
+  padding: 0 16px;
+  background: #fff;
+  border-bottom: 1px solid #e3ebf2;
+  flex-shrink: 0;
+}
+
+.stepper small {
+  color: #7b8792;
+  font-size: 11px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  color: #60707c;
+  font-size: 12.5px;
+}
+
+.steps span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+}
+
+.steps b {
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #eef2f5;
+  color: #60707c;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.steps span[data-current="true"] {
+  position: relative;
+  color: #0e7a46;
+  font-weight: 700;
+}
+
+.steps span[data-current="true"] b {
+  background: #e5f6ec;
+  color: #0e7a46;
+}
+
+.steps span[data-current="true"]::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 0;
+  border-bottom: 2px dotted #16a35a;
+}
+
+.board {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background-color: #f3f7fb;
+  background-image:
+    linear-gradient(to right, #d5e1ec 1px, transparent 1px),
+    linear-gradient(to bottom, #d5e1ec 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+.scroller {
+  position: absolute;
+  inset: 0 0 48px;
+  overflow: auto;
+  direction: ltr;
+  scrollbar-width: thin;
+  scrollbar-color: #b7c6d4 transparent;
+}
+
+.diagram {
+  position: absolute;
+  inset: 8px 10px 4px;
+  direction: ltr;
+  container-type: inline-size;
+  transform-origin: center center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.start,
+.doc,
+.node,
+.edgeLabel {
+  direction: rtl;
+}
+
+.wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.wires path {
+  fill: none;
+  stroke: #1b242e;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.start,
+.doc,
+.node {
+  position: absolute;
+  z-index: 2;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: #fff;
+  color: #243240;
+  box-shadow: 0 8px 18px rgba(20, 36, 52, 0.12);
+}
+
+.start svg:first-child {
+  color: #0e7a46;
+}
+
+.doc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: right;
+  box-shadow: 0 10px 22px rgba(20, 36, 52, 0.12);
+}
+
+.doc b,
+.doc small {
+  display: block;
+}
+
+.doc b {
+  font-size: clamp(9px, 1.35cqi, 12px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.doc small {
+  color: #6d7b86;
+  font-size: clamp(8px, 1.05cqi, 10px);
+}
+
+.docIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: #efe8fb;
+  color: #5b3cc4;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  border-radius: 8px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 10px 22px rgba(20, 36, 52, 0.13);
+}
+
+.nodeHead {
+  display: flex;
+  flex: 0 0 48%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  min-height: 0;
+  padding: 4px 6px 5px;
+  color: #fff;
+}
+
+.node[data-tone="purple"] .nodeHead {
+  background: #3c2d8c;
+}
+
+.node[data-tone="magenta"] .nodeHead {
+  background: #c2186a;
+}
+
+.node[data-tone="green"] .nodeHead {
+  background: #0f8d40;
+}
+
+.node[data-tone="red"] .nodeHead {
+  background: #e12632;
+}
+
+.node[data-tone="crimson"] .nodeHead {
+  background: #9d1830;
+}
+
+.nodeTools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 14px;
+}
+
+.nodeTools svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0.9;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-inline-end: auto;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: #e7f3fb;
+  color: #1d4f86;
+  font-size: clamp(7px, 0.95cqi, 9px);
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.badge svg {
+  width: 9px;
+  height: 9px;
+  opacity: 1;
+}
+
+.nodeTitle {
+  font-size: clamp(10px, 1.55cqi, 14px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.nodeBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 10px;
+  background: #fff;
+}
+
+.nodeBody i {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+  background: #e4ebf2;
+}
+
+.nodeBody i:last-child {
+  width: 68%;
+  margin-inline-start: auto;
+}
+
+.edgeLabel {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: #f3f7fb;
+  color: #243240;
+  font-size: clamp(8px, 1.15cqi, 11px);
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.diagram[data-focus="on"] .start[data-hot="false"],
+.diagram[data-focus="on"] .doc[data-hot="false"],
+.diagram[data-focus="on"] .node[data-hot="false"] {
+  opacity: 0.42;
+}
+
+.start[data-hot="true"],
+.doc[data-hot="true"],
+.node[data-hot="true"] {
+  z-index: 3;
+}
+
+.diagram[data-focus="on"] .start[data-hot="true"],
+.diagram[data-focus="on"] .doc[data-hot="true"],
+.diagram[data-focus="on"] .node[data-hot="true"] {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 4px #0874d8,
+    0 12px 24px rgba(20, 36, 52, 0.16);
+}
+
+.start:focus-visible,
+.doc:focus-visible,
+.node:focus-visible,
+.dock button:focus-visible {
+  outline: 2px solid #0874d8;
+  outline-offset: 3px;
+}
+
+.dock {
+  position: absolute;
+  z-index: 4;
+  bottom: 14px;
+  left: 50%;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(20, 36, 52, 0.14);
+  transform: translateX(-50%);
+}
+
+.dock button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #31404c;
+  cursor: pointer;
+}
+
+.dock button:hover:not(:disabled) {
+  background: #eef3f8;
+}
+
+.dock button:disabled {
+  color: #b7c2cb;
+  cursor: default;
+}
+
+.status {
+  position: absolute;
+  z-index: 4;
+  bottom: 18px;
+  left: 16px;
+  max-width: min(240px, 34%);
+  margin: 0;
+  color: #1a3f68;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.status:empty {
+  display: none;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagram,
+  .copy {
+    transition: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .frame {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-radius: 18px;
+  }
+
+  .app {
+    min-height: 500px;
+  }
+
+  .copy {
+    position: relative;
+    inset: auto;
+    width: auto;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chromeNav {
+    display: none;
+  }
+
+  .steps {
+    font-size: 11px;
+  }
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    min-height: 460px;
+  }
+
+  .scroller {
+    position: relative;
+    inset: auto;
+    flex: 1;
+    min-height: 380px;
+  }
+
+  .diagram {
+    position: relative;
+    inset: auto;
+    width: 680px;
+    height: 420px;
+    margin: 8px;
+  }
+
+  .dock {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    align-self: center;
+    margin: 4px 0 8px;
+    transform: none;
+  }
+
+  .status {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    max-width: none;
+    margin: 0 12px 10px;
+    text-align: center;
+  }
+}
