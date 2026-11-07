@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArchiveDemo, ArchiveMotion } from "./ArchiveInteractive";
+import { FileCard, PaperSheet, archiveKit } from "./ArchivePieces";
 import styles from "./ArchiveExperience.module.css";
 
 const contact = "/ar/contact?product=archive";
@@ -11,28 +12,52 @@ export function ArchiveExperience() {
       <ArchiveMotion />
       <div className={styles.productBar}>
         <a href="#archive-overview" className={styles.productIdentity}><span className={styles.archiveMark} aria-hidden="true">▤</span><b dir="ltr">AMESCOM ARCHIVE</b></a>
-        <nav aria-label="أقسام صفحة الأرشيف"><a href="#archive-demo">جرّب الفكرة</a><a href="#archive-features">المزايا</a><a href="#archive-questions">الأسئلة الشائعة</a></nav>
+        <nav aria-label="أقسام صفحة الأرشيف"><a href="#archive-film">شاهد العرض</a><a href="#archive-demo">جرّب الفكرة</a><a href="#archive-features">المزايا</a><a href="#archive-questions">الأسئلة الشائعة</a></nav>
       </div>
 
       <section id="archive-overview" className={`${styles.hero} ${styles.wrap}`}>
         <div className={styles.heroCopy}>
           <h1>كل وثيقة في مكانها.<br /><span>وكل معلومة<br className={styles.desktopBreak} /> في متناولك.</span></h1>
           <p>حوّل أكوام الأوراق إلى معرفة منظّمة.<br />أرشفة إلكترونية، بحث في النصوص العربية، وصلاحيات تبقي فريقك على الصفحة نفسها.</p>
-          <div className={styles.actions}><Link className={styles.primary} href={contact}>اتصل بنا <span aria-hidden="true">←</span></Link><a className={styles.textLink} href="#archive-demo">شاهد كيف تعمل الفكرة <span aria-hidden="true">↓</span></a></div>
+          <div className={styles.actions}><Link className={styles.primary} href={contact}>اتصل بنا <span aria-hidden="true">←</span></Link><a className={styles.textLink} href="#archive-film">شاهد كيف تعمل الفكرة <span aria-hidden="true">↓</span></a></div>
           <div className={styles.heroTags}><span>يقرأ العربية</span><span>ينظّم الوثائق</span><span>يحفظ تاريخها</span></div>
         </div>
         <div className={styles.heroArt} aria-label="ثلاث وثائق في مكانها: سياسة المشتريات، محضر الاجتماع، وعقد توريد">
-          <div className={styles.sheet} data-sheet="back" aria-hidden="true"><span>سياسة المشتريات</span><i /><i /><i /><b>DOC</b></div>
-          <div className={styles.sheet} data-sheet="mid" aria-hidden="true"><span>محضر الاجتماع</span><i /><i /><i /><b>PDF</b></div>
-          <div className={styles.sheet} data-sheet="front" aria-hidden="true"><span>عقد توريد</span><i /><i /><i /><em className={styles.stamp}>مؤرشف</em></div>
-          <div className={styles.floatingDocument} data-place="back" aria-hidden="true"><span className={styles.fileIcon} data-kind="DOC">DOC</span><div><b>سياسة المشتريات.doc</b><small>مصنّفة. قابلة للبحث. في مكانها.</small></div><span className={styles.check}>✓</span></div>
-          <div className={styles.floatingDocument} data-place="mid" aria-hidden="true"><span className={styles.fileIcon}>PDF</span><div><b>محضر الاجتماع.pdf</b><small>مصنّف. قابل للبحث. في مكانه.</small></div><span className={styles.check}>✓</span></div>
-          <div className={styles.floatingDocument} data-place="front" aria-hidden="true"><span className={styles.fileIcon}>PDF</span><div><b>عقد توريد.pdf</b><small>مصنّف. قابل للبحث. في مكانه.</small></div><span className={styles.check}>✓</span></div>
+          {archiveKit.map((item) => (
+            <PaperSheet
+              key={item.place}
+              decorative
+              place={item.place}
+              title={item.paperTitle}
+              stamped={item.stamped}
+            />
+          ))}
+          {archiveKit.map((item) => (
+            <FileCard
+              key={item.place}
+              decorative
+              place={item.place}
+              name={item.fileName}
+              note={item.note}
+              kind={item.kind}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section id="archive-film" className={`${styles.filmSection} ${styles.wrap}`}>
+        <div className={styles.filmFrame} data-archive-reveal>
+          <video className={styles.film} controls playsInline preload="metadata" poster="/media/archive/product-demo-poster.jpg" width={1280} height={720} aria-label="جولة قصيرة في منتج ARCHIVE">
+            <source src="/media/archive/product-demo.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
       <section id="archive-demo" className={`${styles.demoSection} ${styles.wrap}`}>
-        <div className={styles.sectionHeading} data-archive-reveal><div><h2>تذكّر المعلومة.<br /><span>دع الأرشيف يجد الوثيقة.</span></h2></div><p>ابحث بكلمة، صفِّ حسب النوع، وافتح تفاصيل الوثيقة.<br />جرّب هذا المثال لتستكشف الفكرة بنفسك.</p></div>
+        <div className={styles.sectionHeading} data-archive-reveal>
+          <h2>تذكّر المعلومة.<br /><span>دع الأرشيف يجد الوثيقة.</span></h2>
+          <p>ابحث بكلمة، صفِّ حسب النوع، وافتح تفاصيل الوثيقة.<br />جرّب هذا المثال لتستكشف الفكرة بنفسك.</p>
+        </div>
         <ArchiveDemo />
         <p className={styles.demoCaption}>مثال تفاعلي ببيانات توضيحية لشرح الإمكانات، وليس واجهة النظام الفعلية.</p>
       </section>

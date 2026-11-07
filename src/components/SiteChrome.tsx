@@ -2,6 +2,7 @@ import { footerNav, headerNav } from "@content/navigation";
 import type { Locale } from "@content/types";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
+import { HeroCompareProvider } from "./HeroCompare";
 import { JsonLd } from "./JsonLd";
 import { MotionRoot } from "./MotionRoot";
 import { SkipLink } from "./SkipLink";
@@ -23,7 +24,7 @@ export function SiteChrome({
   const help = headerItems.find((item) => item.id === "help");
 
   return (
-    <>
+    <HeroCompareProvider>
       <MotionRoot />
       <JsonLd data={organizationJsonLd()} />
       <SkipLink locale={locale} />
@@ -37,6 +38,6 @@ export function SiteChrome({
         companyLinks={companyLinks}
         help={help}
       />
-    </>
+    </HeroCompareProvider>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HomeHeroMedia } from "./HomeHeroMedia";
+import { HomeHero } from "./HomeHeroMedia";
 import { HomeProductStage } from "./HomeProductStage";
 import { Reveal } from "@/components/Reveal";
 import { ArrowIcon } from "@/components/Icons";
@@ -39,14 +39,11 @@ const heroSlides = [
 export function HomeExperience({ products, sectors }: HomeProps) {
   return (
     <div className={styles.page}>
-      <section className={styles.hero} aria-labelledby="home-heading">
-        <HomeHeroMedia slides={heroSlides} />
-        <div className={styles.heroShade} />
+      <HomeHero slides={heroSlides} videoSrc="/media/home-brochure/typemotion-hero.mp4">
         <div className={`${styles.heroIntro} ${styles.wrap}`}>
           <h1 id="home-heading">
-            معلومات منظّمة.
-            <br />
-            <span>وعمل يتحرّك.</span>
+            أميسكوم
+            <span className={styles.heroSlogan}>معلومات منظمة وعمل يتطور بسرعة وبأمان</span>
           </h1>
           <p>
             حلول أميسكوم لإدارة الوثائق، ومسارات العمل، والمراكز الطبية، والمخاطر.
@@ -61,7 +58,7 @@ export function HomeExperience({ products, sectors }: HomeProps) {
             </a>
           </div>
         </div>
-      </section>
+      </HomeHero>
 
       {products.length > 0 && (
         <section id="home-products" className={`${styles.products} ${styles.wrap}`} aria-label="منتجات أميسكوم">

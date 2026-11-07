@@ -58,6 +58,84 @@
   color: #f6f1e8;
 }
 
+.heroShell {
+  display: block;
+  min-height: 0;
+  overflow: visible;
+}
+
+.heroStage {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  min-height: calc(100svh - var(--header-height));
+  overflow: hidden;
+  color: #f6f1e8;
+}
+
+.heroFramed {
+  padding-block: 28px 12px;
+}
+
+.heroFramed .heroStage {
+  width: calc(100% - 96px);
+  max-width: 1200px;
+  height: min(72vh, 640px);
+  min-height: min(72vh, 640px);
+  margin-inline: auto;
+  border-radius: 28px;
+  background: #fff;
+}
+
+.heroFramed .heroShade {
+  display: none;
+}
+
+.hero.heroFramed h1,
+.hero.heroFramed h1 span,
+.heroFramed .heroIntro > p {
+  color: var(--home-blue);
+}
+
+.heroFramed .heroIntro > p {
+  max-width: 34rem;
+  margin-top: auto;
+}
+
+.heroFramed .secondary {
+  background: #fff;
+  border-color: var(--home-blue);
+  color: var(--home-blue) !important;
+}
+
+.heroFramed .heroIntro h1,
+.heroFramed .heroIntro > p {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translate3d(0, 10px, 0);
+  transition:
+    opacity 1.25s cubic-bezier(0.33, 0, 0.2, 1),
+    filter 1.25s cubic-bezier(0.33, 0, 0.2, 1),
+    transform 1.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.heroCopyReady.heroFramed .heroIntro h1,
+.heroCopyReady.heroFramed .heroIntro > p {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.heroCopyReady.heroFramed .heroIntro h1 {
+  transition-delay: 0.06s;
+}
+
+.heroCopyReady.heroFramed .heroIntro > p {
+  transition-delay: 0.2s;
+}
+
 .heroMedia {
   position: absolute;
   inset: 0;
@@ -77,6 +155,15 @@
   opacity: 1;
 }
 
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .heroShade {
   position: absolute;
   inset: 0;
@@ -93,17 +180,44 @@
   text-align: start;
 }
 
+.heroFramed .heroIntro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 2.5rem 2.75rem 2.25rem;
+}
+
 .hero h1 {
-  max-width: 11ch;
+  max-width: 34rem;
   margin: 0 0 18px;
+  font-family: var(--font-arabic), sans-serif;
   font-size: clamp(2.7rem, 7.2vw, 5.6rem);
   line-height: 1.18;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   color: #fff;
+}
+
+.hero.heroFramed h1 {
+  font-size: clamp(2.025rem, 5.4vw, 4.2rem);
+  line-height: 1.28;
 }
 
 .hero h1 span {
   color: #d9d3c8;
+}
+
+.heroSlogan {
+  display: block;
+  max-width: 32rem;
+  margin-top: 0.4rem;
+  font-size: clamp(1.5rem, 2.175vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: 0;
 }
 
 .heroIntro > p {
@@ -540,6 +654,11 @@
     animation: enter 0.8s 0.16s both;
   }
 
+  .heroFramed .heroIntro h1,
+  .heroFramed .heroIntro > p {
+    animation: none;
+  }
+
   .heroSlideActive {
     animation: ken 12s linear forwards;
   }
@@ -557,6 +676,14 @@
   .heroSlide,
   .heroSlideActive,
   .photoComposition img {
+    transform: none;
+    transition: none;
+  }
+
+  .heroFramed .heroIntro h1,
+  .heroFramed .heroIntro > p {
+    opacity: 1;
+    filter: none;
     transform: none;
     transition: none;
   }
@@ -587,8 +714,27 @@
     width: calc(100% - 64px);
   }
 
+  .heroFramed .heroStage {
+    width: calc(100% - 64px);
+    height: min(64vh, 540px);
+    min-height: min(64vh, 540px);
+    border-radius: 22px;
+  }
+
+  .heroFramed .heroIntro {
+    padding: 1.75rem 1.6rem 1.5rem;
+  }
+
   .hero h1 {
     font-size: 3.2rem;
+  }
+
+  .hero.heroFramed h1 {
+    font-size: 2.4rem;
+  }
+
+  .heroSlogan {
+    font-size: 1.47rem;
   }
 
   .heroIntro > p {
@@ -644,9 +790,26 @@
     width: calc(100% - 40px);
   }
 
-  .hero {
+  .hero,
+  .heroStage {
     min-height: calc(100svh - var(--header-height));
     align-items: flex-end;
+  }
+
+  .heroFramed {
+    min-height: 0;
+  }
+
+  .heroFramed .heroStage {
+    width: calc(100% - 40px);
+    height: 28rem;
+    min-height: 28rem;
+    border-radius: 18px;
+  }
+
+  .heroFramed .heroIntro {
+    inset: 0;
+    padding: 1.5rem 1.25rem 1.25rem;
   }
 
   .heroShade {
@@ -662,6 +825,16 @@
     max-width: none;
     font-size: 2.55rem;
     line-height: 1.25;
+  }
+
+  .hero.heroFramed h1 {
+    font-size: 1.92rem;
+    line-height: 1.35;
+  }
+
+  .heroSlogan {
+    max-width: none;
+    font-size: 1.26rem;
   }
 
   .heroIntro > p {

@@ -6,6 +6,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { primaryCta } from "@content/navigation";
 import type { Locale, NavItem } from "@content/types";
 import { Button } from "./Button";
+import { useHeroCompare } from "./HeroCompare";
 import { CaretIcon, CloseIcon, MenuIcon } from "./Icons";
 import { Wordmark } from "./Wordmark";
 import styles from "./Header.module.css";
@@ -23,6 +24,8 @@ function visibleFocusable(root: HTMLElement): HTMLElement[] {
 
 export function Header({ locale, items }: HeaderProps) {
   const pathname = usePathname();
+  const heroCompare = useHeroCompare();
+  const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [menuPath, setMenuPath] = useState(pathname);
@@ -128,6 +131,16 @@ export function Header({ locale, items }: HeaderProps) {
         </nav>
 
         <div className={styles.actions}>
+          {isHome ? (
+            <button
+              type="button"
+              className={styles.compare}
+              onClick={heroCompare.toggle}
+              aria-pressed={heroCompare.mode === "image"}
+            >
+              {heroCompare.mode === "video" ? "الصورة" : "الفيديو"}
+            </button>
+          ) : null}
           <Button href={primaryCta.href} variant="primary" className={styles.cta}>
             {primaryCta.label[locale]}
           </Button>

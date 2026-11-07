@@ -39,7 +39,7 @@ export function robotsDocument(env: Env = process.env) {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/ar/design-preview", "/api/"],
+      disallow: ["/ar/design-preview", "/ar/components", "/api/"],
     },
     sitemap: `${siteOrigin(env)}/sitemap.xml`,
   };
