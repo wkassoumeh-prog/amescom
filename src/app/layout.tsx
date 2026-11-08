@@ -1,4 +1,4 @@
-import { El_Messiri, Inter, Noto_Sans_Arabic } from "next/font/google";
+import { Amiri, El_Messiri, Inter, Noto_Sans_Arabic } from "next/font/google";
 import type { ReactNode } from "react";
 import { siteName } from "@content/metadata";
 import { DEFAULT_LOCALE, directionFor } from "@/lib/locale";
@@ -10,6 +10,14 @@ const notoSansArabic = Noto_Sans_Arabic({
   weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-arabic",
+});
+
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  display: "swap",
+  preload: false,
+  variable: "--font-amiri",
 });
 
 const elMessiri = El_Messiri({
@@ -48,7 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang={DEFAULT_LOCALE}
       dir={directionFor(DEFAULT_LOCALE)}
       data-scroll-behavior="smooth"
-      className={`${notoSansArabic.variable} ${elMessiri.variable} ${inter.variable}`}
+      className={`${notoSansArabic.variable} ${amiri.variable} ${elMessiri.variable} ${inter.variable}`}
     >
       <body className={notoSansArabic.className}>{children}</body>
     </html>

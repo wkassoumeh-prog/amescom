@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "fonts:dubai": "node scripts/fetch-dubai-fonts.mjs"
   },
   "engines": {
     "node": ">=20.9.0"

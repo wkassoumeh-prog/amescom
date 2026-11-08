@@ -202,7 +202,7 @@
 }
 
 .hero.heroFramed h1 {
-  font-size: clamp(2.025rem, 5.4vw, 4.2rem);
+  font-size: clamp(1.0875rem, 5.4vw, 3.2625rem);
   line-height: 1.28;
 }
 
@@ -226,6 +226,15 @@
   font-size: 1.08rem;
   line-height: 1.95;
   color: #e4ddd2;
+}
+
+/* Temporary hero font preview (nav radio) */
+.heroFontAmiri .heroIntro :is(h1, p, a, .heroSlogan) {
+  font-family: var(--font-amiri), serif;
+}
+
+.heroFontDubai .heroIntro :is(h1, p, a, .heroSlogan) {
+  font-family: var(--font-dubai), var(--font-arabic), sans-serif;
 }
 
 .actions {

@@ -3,6 +3,7 @@ import type { Locale } from "@content/types";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { HeroCompareProvider } from "./HeroCompare";
+import { HeroFontPreviewProvider } from "./HeroFontPreview";
 import { JsonLd } from "./JsonLd";
 import { MotionRoot } from "./MotionRoot";
 import { SkipLink } from "./SkipLink";
@@ -25,19 +26,21 @@ export function SiteChrome({
 
   return (
     <HeroCompareProvider>
-      <MotionRoot />
-      <JsonLd data={organizationJsonLd()} />
-      <SkipLink locale={locale} />
-      <Header locale={locale} items={headerItems} />
-      <main id="main" className="site-main">
-        {children}
-      </main>
-      <Footer
-        locale={locale}
-        products={productParent?.children ?? []}
-        companyLinks={companyLinks}
-        help={help}
-      />
+      <HeroFontPreviewProvider>
+        <MotionRoot />
+        <JsonLd data={organizationJsonLd()} />
+        <SkipLink locale={locale} />
+        <Header locale={locale} items={headerItems} />
+        <main id="main" className="site-main">
+          {children}
+        </main>
+        <Footer
+          locale={locale}
+          products={productParent?.children ?? []}
+          companyLinks={companyLinks}
+          help={help}
+        />
+      </HeroFontPreviewProvider>
     </HeroCompareProvider>
   );
 }

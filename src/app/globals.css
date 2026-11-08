@@ -1,3 +1,24 @@
+/* Dubai (Microsoft, free worldwide) — hero font preview */
+@font-face {
+  font-family: "Dubai";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("/fonts/dubai/Dubai-Regular.woff2") format("woff2"),
+    url("https://assets.undrr.org/fonts/dubai/v1.0.0/Regular/Dubai-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Dubai";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("/fonts/dubai/Dubai-Bold.woff2") format("woff2"),
+    url("https://assets.undrr.org/fonts/dubai/v1.0.0/Bold/Dubai-Bold.woff2") format("woff2");
+}
+
 :root {
   --color-bg: #ffffff;
   --color-surface: #f7f8fa;
@@ -31,6 +52,7 @@
   --font-sans: var(--font-arabic), var(--font-latin), "Segoe UI", Tahoma, sans-serif;
   --font-display: var(--font-display-face), var(--font-arabic), "Segoe UI", Tahoma, sans-serif;
   --font-latin-stack: var(--font-latin), var(--font-arabic), "Segoe UI", sans-serif;
+  --font-dubai: "Dubai", var(--font-arabic), sans-serif;
 
   --text-body: 1.125rem;
   --leading-body: 1.75;
