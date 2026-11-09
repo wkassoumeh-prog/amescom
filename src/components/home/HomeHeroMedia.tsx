@@ -13,6 +13,22 @@ export type HomeSlide = {
 };
 
 const VIDEO_START_SECONDS = 1;
+/** Matches HomeExperience mobile layout; hero video is desktop-only. */
+const HERO_VIDEO_MIN_WIDTH_MQ = "(min-width: 701px)";
+
+function useHeroVideoViewport(): boolean {
+  const [eligible, setEligible] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(HERO_VIDEO_MIN_WIDTH_MQ);
+    const sync = () => setEligible(media.matches);
+    sync();
+    media.addEventListener("change", sync);
+    return () => media.removeEventListener("change", sync);
+  }, []);
+
+  return eligible;
+}
 
 const heroFontClass: Record<HeroFontPreviewMode, string | undefined> = {
   default: undefined,
@@ -31,7 +47,8 @@ export function HomeHero({
 }) {
   const { mode } = useHeroCompare();
   const { font: heroFont } = useHeroFontPreview();
-  const framed = Boolean(videoSrc) && mode === "video";
+  const videoViewport = useHeroVideoViewport();
+  const framed = Boolean(videoSrc) && mode === "video" && videoViewport;
   const fontClass = heroFontClass[heroFont];
   const [copyReady, setCopyReady] = useState(false);
   const revealCopy = useCallback(() => setCopyReady(true), []);
@@ -59,7 +76,12 @@ export function HomeHero({
       aria-labelledby="home-heading"
     >
       <div className={styles.heroStage}>
-        <HomeHeroMedia slides={slides} videoSrc={videoSrc} onEnded={revealCopy} />
+        <HomeHeroMedia
+          slides={slides}
+          videoSrc={videoSrc}
+          onEnded={revealCopy}
+          allowVideo={videoViewport}
+        />
         <div className={styles.heroShade} />
         {children}
       </div>
@@ -71,13 +93,16 @@ export function HomeHeroMedia({
   slides,
   videoSrc,
   onEnded,
+  allowVideo = true,
 }: {
   slides: HomeSlide[];
   videoSrc?: string;
   onEnded?: () => void;
+  /** When false (e.g. narrow screens), slideshow images are used instead of video. */
+  allowVideo?: boolean;
 }) {
   const { mode } = useHeroCompare();
-  const showVideo = Boolean(videoSrc) && mode === "video";
+  const showVideo = Boolean(videoSrc) && mode === "video" && allowVideo;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [index, setIndex] = useState(0);
   const [reduceMotion, setReduceMotion] = useState(false);
