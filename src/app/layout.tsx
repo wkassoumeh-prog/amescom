@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import { siteName } from "@content/metadata";
 import { DEFAULT_LOCALE, directionFor } from "@/lib/locale";
 import { indexingEnabled, siteOrigin } from "@/lib/site";
+import { Tweak } from "@/tweak";
+import { amescomTweakFonts } from "@/tweak-fonts";
 import "./globals.css";
 
 const notoSansArabic = Noto_Sans_Arabic({
@@ -58,7 +60,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       data-scroll-behavior="smooth"
       className={`${notoSansArabic.variable} ${amiri.variable} ${elMessiri.variable} ${inter.variable}`}
     >
-      <body className={notoSansArabic.className}>{children}</body>
+      <body className={notoSansArabic.className}>
+        {children}
+        <Tweak fonts={amescomTweakFonts} />
+      </body>
     </html>
   );
 }
