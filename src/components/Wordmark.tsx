@@ -1,13 +1,21 @@
-import { company } from "@content/company";
 import styles from "./Wordmark.module.css";
+
+const LOGO_SRC = "/media/amescom-logo.svg";
+const LOGO_WIDTH = 809;
+const LOGO_HEIGHT = 137;
 
 export function Wordmark() {
   return (
     <span className={styles.wordmark} translate="no">
-      <span className={styles.ar}>{company.publicName.ar}</span>
-      <span className={`ltr-isolate ${styles.en}`} aria-hidden="true">
-        {company.publicName.enLatin}
-      </span>
+      <img
+        className={styles.logo}
+        src={LOGO_SRC}
+        alt=""
+        width={LOGO_WIDTH}
+        height={LOGO_HEIGHT}
+        decoding="async"
+        fetchPriority="high"
+      />
     </span>
   );
 }
