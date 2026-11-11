@@ -228,15 +228,6 @@
   color: #e4ddd2;
 }
 
-/* Temporary hero font preview (nav radio) */
-.heroFontAmiri .heroIntro :is(h1, p, a, .heroSlogan) {
-  font-family: var(--font-amiri), serif;
-}
-
-.heroFontDubai .heroIntro :is(h1, p, a, .heroSlogan) {
-  font-family: var(--font-dubai), var(--font-arabic), sans-serif;
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;

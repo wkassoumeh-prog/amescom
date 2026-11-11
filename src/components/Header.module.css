@@ -33,7 +33,7 @@
   align-items: center;
   min-height: 2.75rem;
   padding-inline: 0.75rem;
-  color: var(--color-text);
+  color: var(--color-logo-text);
   text-decoration: none;
   background: none;
   border: 0;
@@ -85,41 +85,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.fontPick {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 0;
-  padding: 0.2rem 0.45rem;
-  border: 1px dashed var(--color-line);
-  border-radius: 999px;
-  background: var(--color-bg);
-}
-
-.fontPickOption {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
-  font-size: 0.65rem;
-  font-weight: 600;
-  line-height: 1;
-  color: var(--color-text-muted, #666);
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.fontPickOption input {
-  width: 0.72rem;
-  height: 0.72rem;
-  margin: 0;
-  accent-color: var(--color-accent);
-  cursor: pointer;
-}
-
-.fontPickOption:has(input:checked) {
-  color: var(--color-accent);
 }
 
 .compare {

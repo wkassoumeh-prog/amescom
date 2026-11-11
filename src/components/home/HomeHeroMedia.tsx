@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { useHeroCompare } from "@/components/HeroCompare";
-import { useHeroFontPreview, type HeroFontPreviewMode } from "@/components/HeroFontPreview";
 import styles from "./HomeExperience.module.css";
 
 export type HomeSlide = {
@@ -30,12 +29,6 @@ function useHeroVideoViewport(): boolean {
   return eligible;
 }
 
-const heroFontClass: Record<HeroFontPreviewMode, string | undefined> = {
-  default: undefined,
-  amiri: styles.heroFontAmiri,
-  dubai: styles.heroFontDubai,
-};
-
 export function HomeHero({
   slides,
   videoSrc,
@@ -46,10 +39,8 @@ export function HomeHero({
   children: ReactNode;
 }) {
   const { mode } = useHeroCompare();
-  const { font: heroFont } = useHeroFontPreview();
   const videoViewport = useHeroVideoViewport();
   const framed = Boolean(videoSrc) && mode === "video" && videoViewport;
-  const fontClass = heroFontClass[heroFont];
   const [copyReady, setCopyReady] = useState(false);
   const revealCopy = useCallback(() => setCopyReady(true), []);
 
@@ -69,7 +60,6 @@ export function HomeHero({
         styles.heroShell,
         framed ? styles.heroFramed : "",
         copyReady ? styles.heroCopyReady : "",
-        fontClass ?? "",
       ]
         .filter(Boolean)
         .join(" ")}

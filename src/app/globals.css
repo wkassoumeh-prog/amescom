@@ -1,4 +1,4 @@
-/* Dubai (Microsoft, free worldwide) — hero font preview */
+/* Dubai (Microsoft, free worldwide) — available to the font tweaker */
 @font-face {
   font-family: "Dubai";
   font-style: normal;
@@ -28,6 +28,7 @@
   --color-accent: #145da0;
   --color-accent-hover: #104a80;
   --color-accent-soft: #edf4fc;
+  --color-logo-text: #5b5c5c;
   --color-on-accent: #ffffff;
   --color-danger: #9b1c1c;
   --color-focus: #145da0;

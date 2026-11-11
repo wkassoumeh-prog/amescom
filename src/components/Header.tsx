@@ -7,7 +7,6 @@ import { primaryCta } from "@content/navigation";
 import type { Locale, NavItem } from "@content/types";
 import { Button } from "./Button";
 import { useHeroCompare } from "./HeroCompare";
-import { useHeroFontPreview, type HeroFontPreviewMode } from "./HeroFontPreview";
 import { CaretIcon, CloseIcon, MenuIcon } from "./Icons";
 import { Wordmark } from "./Wordmark";
 import styles from "./Header.module.css";
@@ -26,7 +25,6 @@ function visibleFocusable(root: HTMLElement): HTMLElement[] {
 export function Header({ locale, items }: HeaderProps) {
   const pathname = usePathname();
   const heroCompare = useHeroCompare();
-  const heroFontPreview = useHeroFontPreview();
   const isHome = pathname === `/${locale}` || pathname === `/${locale}/`;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -134,36 +132,14 @@ export function Header({ locale, items }: HeaderProps) {
 
         <div className={styles.actions}>
           {isHome ? (
-            <>
-              <fieldset className={styles.fontPick} aria-label="معاينة خط البطل (مؤقت)">
-                {(
-                  [
-                    ["default", "Noto"],
-                    ["amiri", "Amiri"],
-                    ["dubai", "Dubai"],
-                  ] as const satisfies [HeroFontPreviewMode, string][]
-                ).map(([value, label]) => (
-                  <label key={value} className={styles.fontPickOption}>
-                    <input
-                      type="radio"
-                      name="hero-font-preview"
-                      value={value}
-                      checked={heroFontPreview.font === value}
-                      onChange={() => heroFontPreview.setFont(value)}
-                    />
-                    <span>{label}</span>
-                  </label>
-                ))}
-              </fieldset>
-              <button
-                type="button"
-                className={styles.compare}
-                onClick={heroCompare.toggle}
-                aria-pressed={heroCompare.mode === "image"}
-              >
-                {heroCompare.mode === "video" ? "الصورة" : "الفيديو"}
-              </button>
-            </>
+            <button
+              type="button"
+              className={styles.compare}
+              onClick={heroCompare.toggle}
+              aria-pressed={heroCompare.mode === "image"}
+            >
+              {heroCompare.mode === "video" ? "الصورة" : "الفيديو"}
+            </button>
           ) : null}
           <Button href={primaryCta.href} variant="primary" className={styles.cta}>
             {primaryCta.label[locale]}
