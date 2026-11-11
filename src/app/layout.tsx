@@ -2,6 +2,7 @@ import { Amiri, El_Messiri, Inter, Noto_Sans_Arabic } from "next/font/google";
 import type { ReactNode } from "react";
 import { siteName } from "@content/metadata";
 import { DEFAULT_LOCALE, directionFor } from "@/lib/locale";
+import { contentMode } from "@/lib/publication";
 import { indexingEnabled, siteOrigin } from "@/lib/site";
 import { Tweak } from "@/tweak";
 import { amescomTweakFonts } from "@/tweak-fonts";
@@ -62,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body className={notoSansArabic.className}>
         {children}
-        <Tweak fonts={amescomTweakFonts} />
+        <Tweak fonts={amescomTweakFonts} enabled={contentMode() !== "production"} />
       </body>
     </html>
   );

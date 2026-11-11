@@ -17,6 +17,8 @@ export function App() {
 
 It renders in development only. Pass `enabled` to force it on or off.
 
+In this project it stays on while content mode is preview, and turns off when `AMESCOM_CONTENT_MODE` is `production`.
+
 ## Fonts
 
 ```tsx
